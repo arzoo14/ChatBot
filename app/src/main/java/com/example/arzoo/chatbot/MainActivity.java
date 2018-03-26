@@ -42,22 +42,36 @@ public class MainActivity extends AppCompatActivity {
 
         ChatMessage chm = new ChatMessage("What is your name", false, false);
         mAdapter.add(chm);
-        final int[] flag = {0};
 
 //code for sending the message
         mButtonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (flag[0] == 0) {
-                    String message = mEditTextMessage.getText().toString();
-                    sendMessage(message);
-                    flag[0] = 1;
+                switch (mListView.getCount()) {
+                    case 1:
+                        String message = mEditTextMessage.getText().toString();
+                        sendMessage(message);
+                        mEditTextMessage.setText("");
+                        mListView.setSelection(mAdapter.getCount() - 1);
+                        mimicOtherMessage("What is your age?");
+                        break;
+                    case 3:
+                        message = mEditTextMessage.getText().toString();
+                        sendMessage(message);
+                        mEditTextMessage.setText("");
+                        mListView.setSelection(mAdapter.getCount() - 1);
+                        mimicOtherMessage("What are the Symptoms?");
+                        break;
+                    case 5:
+                        message = mEditTextMessage.getText().toString();
+                        sendMessage(message);
+                        mEditTextMessage.setText("");
+                        mListView.setSelection(mAdapter.getCount() - 1);
+                        mimicOtherMessage("Provide us with some attachments");
+                        break;
+                    default:
+                        break;
                 }
-                else {
-
-                }
-                mEditTextMessage.setText("");
-                mListView.setSelection(mAdapter.getCount() - 1);
             }
         });
     }
@@ -66,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         ChatMessage chatMessage = new ChatMessage(message, true, false);
         mAdapter.add(chatMessage);
         //respond as Helloworld
-        mimicOtherMessage("What is your age?");
     }
 
     private void mimicOtherMessage(String message) {
