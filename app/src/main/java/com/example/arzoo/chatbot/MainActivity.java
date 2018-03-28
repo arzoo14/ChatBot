@@ -33,16 +33,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        iv=(ImageView)findViewById((R.id.imageview1);
+        mImageView = findViewById(R.id.bot_image);
         mListView = (ListView) findViewById(R.id.listView);
         mButtonSend = (FloatingActionButton) findViewById(R.id.btn_send);
         mEditTextMessage = (EditText) findViewById(R.id.et_message);
-        mImageView = (ImageView) findViewById(R.id.iv_image);
         mAdapter = new ChatMessageAdapter(this, new ArrayList<ChatMessage>());
         mListView.setAdapter(mAdapter);
 
         ChatMessage chm = new ChatMessage("What is your name", false, false);
         mAdapter.add(chm);
 
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnClick();
+            }
+        });
 //code for sending the message
         mButtonSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
                         sendMessage(message);
                         mEditTextMessage.setText("");
                         mListView.setSelection(mAdapter.getCount() - 1);
-                        mimicOtherMessage("What are the Symptoms?");
+                        // mimicOtherMessage("What are the Symptoms?");
+                        ChatMessage chatMessage = new ChatMessage(message, true, true);
+                        mAdapter.add(chatMessage);
                         break;
                     case 5:
                         message = mEditTextMessage.getText().toString();
@@ -68,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
                         mEditTextMessage.setText("");
                         mListView.setSelection(mAdapter.getCount() - 1);
                         mimicOtherMessage("Provide us with some attachments");
+                        mImageView.setVisibility(View.VISIBLE);
+                        mListView.setSelection(mAdapter.getCount() - 1);
+                        break;
+                    case 7:
+                        message = mEditTextMessage.getText().toString();
+                        sendMessage(message);
+                        mEditTextMessage.setText("");
+                        mListView.setSelection(mAdapter.getCount() - 1);
+                        mimicOtherMessage("Anything else u wanna add");
+                        mImageView.setVisibility(View.VISIBLE);
+                        mListView.setSelection(mAdapter.getCount() - 1);
                         break;
                     default:
                         break;
@@ -91,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
     private void sendMessage() {
         ChatMessage chatMessage = new ChatMessage(null, true, true);
         mAdapter.add(chatMessage);
-
         mimicOtherMessage();
     }
 
@@ -100,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.add(chatMessage);
     }
 
-    public void btnClick(View v) {
+    public void btnClick() {
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(i, SELECTED_PICTURE);
     }

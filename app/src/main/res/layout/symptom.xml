@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <me.himanshusoni.chatmessageview.ChatMessageView
         android:id="@+id/chatMessageView"
@@ -10,8 +11,8 @@
         android:layout_height="wrap_content"
         app:cmv_arrowGravity="start"
         app:cmv_arrowPosition="left"
-        app:cmv_backgroundColor="#8800bcd4"
-        app:cmv_backgroundColorPressed="#ff00bcd4"
+        app:cmv_backgroundColor="#fff"
+        app:cmv_backgroundColorPressed="#FFBABABA"
         app:cmv_cornerRadius="3dp"
         app:cmv_showArrow="true">
 
@@ -23,7 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="14dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="30dp"
             android:text="HEADACHE" />
@@ -98,6 +99,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_marginTop="0dp"
             android:text="Symptoms"
             android:textColor="@android:color/holo_red_dark"

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
 
-    private static final int MY_MESSAGE = 0, OTHER_MESSAGE = 1, MY_IMAGE = 2, OTHER_IMAGE = 3;
+    private static final int MY_MESSAGE = 0, OTHER_MESSAGE = 1, SYMPTOM = 2, OTHER_IMAGE = 3;
 
     public ChatMessageAdapter(Context context, List<ChatMessage> data) {
         super(context, R.layout.item_mine_message, data);
@@ -32,7 +32,7 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
         ChatMessage item = getItem(position);
         if (item.isMine() && !item.isImage()) return MY_MESSAGE;
         else if (!item.isMine() && !item.isImage()) return OTHER_MESSAGE;
-        else if (item.isMine() && item.isImage()) return MY_IMAGE;
+        else if (item.isMine() && item.isImage()) return SYMPTOM;
         else return OTHER_IMAGE;
     }
 
@@ -47,8 +47,8 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.tem_other_message, parent, false);
             TextView textView = (TextView) convertView.findViewById(R.id.text);
             textView.setText(getItem(position).getContent());
-        } else if (viewType == MY_IMAGE) {
-            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_mine_image, parent, false);
+        } else if (viewType == SYMPTOM) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.symptom, parent, false);
         } else {
             // convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_other_image, parent, false);
         }
