@@ -6,14 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.arzoo.chatbot.MainActivity"
-    >
+    android:scrollbars="vertical"
+    android:foregroundGravity="bottom"    >
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/send_message_layout"
-        android:divider="@null" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:divider="@null"
+        android:scrollbars="vertical"
+        android:foregroundGravity="bottom"
+        />
 
     <LinearLayout
         android:id="@+id/send_message_layout"
@@ -37,7 +44,10 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:hint="Message Bar"
+
+            />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btn_send"

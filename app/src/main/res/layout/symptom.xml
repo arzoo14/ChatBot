@@ -8,10 +8,10 @@
     <me.himanshusoni.chatmessageview.ChatMessageView
         android:id="@+id/chatMessageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="436dp"
         app:cmv_arrowGravity="start"
         app:cmv_arrowPosition="left"
-        app:cmv_backgroundColor="#fff"
+        app:cmv_backgroundColor="#FFBA"
         app:cmv_backgroundColorPressed="#FFBABABA"
         app:cmv_cornerRadius="3dp"
         app:cmv_showArrow="true">
@@ -29,68 +29,68 @@
             android:layout_marginTop="30dp"
             android:text="HEADACHE" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox"
-        android:layout_below="@+id/checkBox"
-        android:text="FEVER" />
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox"
+            android:layout_alignStart="@+id/checkBox"
+            android:layout_below="@+id/checkBox"
+            android:text="FEVER" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox2"
-        android:layout_alignStart="@+id/checkBox2"
-        android:layout_below="@+id/checkBox2"
-        android:text="RASHES" />
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox2"
+            android:layout_alignStart="@+id/checkBox2"
+            android:layout_below="@+id/checkBox2"
+            android:text="RASHES" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox3"
-        android:layout_alignStart="@+id/checkBox3"
-        android:layout_below="@+id/checkBox3"
-        android:text="STOMACHACHE" />
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox3"
+            android:layout_alignStart="@+id/checkBox3"
+            android:layout_below="@+id/checkBox3"
+            android:text="STOMACHACHE" />
 
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox4"
-        android:layout_alignStart="@+id/checkBox4"
-        android:layout_below="@+id/checkBox4"
-        android:text="SUNBURN" />
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox4"
+            android:layout_alignStart="@+id/checkBox4"
+            android:layout_below="@+id/checkBox4"
+            android:text="SUNBURN" />
 
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox5"
-        android:layout_alignStart="@+id/checkBox5"
-        android:layout_below="@+id/checkBox5"
-        android:text="NOSE BLEEDING" />
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox5"
+            android:layout_alignStart="@+id/checkBox5"
+            android:layout_below="@+id/checkBox5"
+            android:text="NOSE BLEEDING" />
 
-    <CheckBox
-        android:id="@+id/checkBox7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox6"
-        android:layout_alignStart="@+id/checkBox6"
-        android:layout_below="@+id/checkBox6"
-        android:text="FRACTURE" />
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox6"
+            android:layout_alignStart="@+id/checkBox6"
+            android:layout_below="@+id/checkBox6"
+            android:text="FRACTURE" />
 
-    <CheckBox
-        android:id="@+id/checkBox8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox7"
-        android:layout_alignStart="@+id/checkBox7"
-        android:layout_below="@+id/checkBox7"
-        android:text="SCABIES" />
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/checkBox7"
+            android:layout_alignStart="@+id/checkBox7"
+            android:layout_below="@+id/checkBox7"
+            android:text="SCABIES" />
 
         <TextView
             android:id="@+id/textView2"
@@ -104,7 +104,7 @@
             android:layout_marginTop="0dp"
             android:text="Symptoms"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="18sp" />
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/button"
@@ -115,6 +115,16 @@
             android:layout_below="@+id/checkBox8"
             android:text="SUBMIT" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="156dp"
+            android:layout_height="62dp"
+            android:layout_alignEnd="@+id/checkBox3"
+            android:layout_below="@+id/button"
+            android:layout_marginEnd="-57dp"
+            android:text="If your symptom is other than the above mentioned , then please mention it in the message bar !"
+            android:textSize="12sp" />
 
-</me.himanshusoni.chatmessageview.ChatMessageView>
+
+    </me.himanshusoni.chatmessageview.ChatMessageView>
 </RelativeLayout>
