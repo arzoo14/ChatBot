@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         sendMessage(message);
                         mEditTextMessage.setText("");
                         mListView.setSelection(mAdapter.getCount() - 1);
-                        mimicOtherMessage("Do you want to send some attachments \nIf yes, send the attachments ! \nElse, send the text about your problem");
+                        mimicOtherMessage("Do you want to send some attachments? \nIf yes, send some media file ! \nElse, send the text about your problem !");
                         mImageView.setVisibility(View.VISIBLE);
 
                         mListView.setSelection(mAdapter.getCount() - 1);
